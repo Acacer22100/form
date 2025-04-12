@@ -1,7 +1,17 @@
-<!-- 加入 flatpickr 樣式與功能 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>話拳寒天Q棒線上訂購單</title>
 
+  <!-- ✅ 引入 flatpickr 樣式 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+  <!-- ✅ 自己的 CSS 樣式 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 <div class="booking-form-w3layouts">
     <form id="orderForm">
         <!-- 訂購單標題 -->
@@ -198,10 +208,20 @@
         <!-- 送出按鈕 -->
         <input type="submit" value="送出">
     </form>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        console.log(document.getElementById("orderUnit")); // 確保找到 input
-    });
+</div>
+
+<!-- ✅ 引入 flatpickr 功能 -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<!-- ✅ 自己的 JS 檔 -->
+<script src="script.js"></script>
+
+<!-- ✅ 測試小段 JS 也放這邊 -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log(document.getElementById("orderUnit")); // 確保找到 input
+  });
 </script>
 
-</div>
+</body>
+</html>
