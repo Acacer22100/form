@@ -1,0 +1,207 @@
+<!-- 加入 flatpickr 樣式與功能 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<div class="booking-form-w3layouts">
+    <form id="orderForm">
+        <!-- 訂購單標題 -->
+        <h1 id="main-title" class="sub-heading-agileits">話拳寒天Q棒線上訂購單</h1>
+
+        <img src="https://i.imgur.com/teoEMl2.jpeg" alt="訂購單圖片" class="order-title-image">
+
+        <!-- 訂購人資訊 -->
+        <div class="main-flex-w3ls-sectns">
+            <div class="form-w3-agile-text1">
+                <label for="customerName">訂購人姓名：</label>
+                <input type="text" id="customerName" required>
+            </div>
+            <div class="form-w3-agile-text2">
+                <label for="phoneNumber">聯絡電話：</label>
+                <input type="tel" id="phoneNumber" required>
+            </div>
+        </div>
+
+        <!-- 訂購單位 & 活動日期 -->
+
+<div class="main-flex-w3ls-sectns">
+    <div class="form-w3-agile-text1">
+        <label for="orderUnit">訂購單位：(ex: XX國中 703班 or XX公司)</label>
+        <input type="text" id="orderUnit" required>
+    </div>
+    <div class="form-w3-agile-text2">
+        <label for="eventDate">活動日期：</label>
+        <input type="date" id="eventDate" required>
+    </div>
+</div>
+
+
+
+<!-- 🔘 勾選是否要填寫統編抬頭 -->
+<div class="main-flex-w3ls-sectns">
+    <label style="font-weight: bold;">
+        <input type="checkbox" id="showInvoiceInfo" style="margin-right: 8px;">
+        我要填寫統編抬頭
+    </label>
+</div>
+
+<!-- 發票資訊（加上 id 方便 JS 控制） -->
+<div class="main-flex-w3ls-sectns" id="invoiceSection" style="display: none;">
+    <div class="form-w3-agile-text1">
+        <label for="invoiceTitle">收據抬頭：</label>
+        <input type="text" id="invoiceTitle" placeholder="若無填寫則與訂購單位一致">
+    </div>
+    <div class="form-w3-agile-text2">
+        <label for="invoiceNumber">統一編號：</label>
+        <input type="text" id="invoiceNumber" placeholder="若無請跳過">
+    </div>
+</div>
+      
+        <!-- ✅ 取貨日期（50%） -->
+        <div class="main-flex-w3ls-sectns">
+            <div class="form-w3-agile-text1" style="flex: 1 1 48%;">
+                <label for="pickupDate">取貨日期：</label>
+                <input type="date" id="pickupDate" required>
+            </div>
+            <div style="flex: 1 1 48%;"></div> <!-- 空白右半邊 -->
+        </div>
+
+        <!-- ✅ 取貨地點全寬 -->
+        <div class="pickup-location-container pickup-location">
+            <p>取貨地點：</p>
+            <div class="pickup-options-wrapper">
+                <!-- 樂華店 -->
+                <label class="pickup-option" id="optionLehua">
+                    <input type="radio" name="pickupLocation" value="樂華店">
+                    <div class="pickup-content">
+                        <img src="https://i.imgur.com/IfK4PSm.jpeg" alt="樂華店">
+                        <div class="pickup-info">
+                            <span class="store-name">樂華店</span>
+                            <span class="store-address">新北市永和區永平路159號</span>
+                            <span class="store-time">需活動前一天取貨，取貨時間: 16:40 - 22:00</span>
+                        </div>
+                    </div>
+                </label>
+                <!-- 士林店 -->
+                <label class="pickup-option" id="optionShilin">
+                    <input type="radio" name="pickupLocation" value="士林店">
+                    <div class="pickup-content">
+                        <img src="https://i.imgur.com/LAMuCDf.jpeg" alt="士林店">
+                        <div class="pickup-info">
+                            <span class="store-name">士林店</span>
+                            <span class="store-address">台北市士林區大南路126號</span>
+                            <span class="store-time">需活動前一天取貨，取貨時間: 18:00 - 22:00</span>
+                        </div>
+                    </div>
+                </label>
+                <!-- 三重取貨點 -->
+                <label class="pickup-option" id="optionSanchong">
+                    <input type="radio" name="pickupLocation" value="三重取貨點">
+                    <div class="pickup-content">
+                        <img src="https://i.imgur.com/poa11v2.jpeg" alt="三重取貨點">
+                        <div class="pickup-info">
+                            <span class="store-name">三重取貨點</span>
+                            <span class="store-address">新北市三重區中正北路212號 (吉美家具行)</span>
+                            <span class="store-time">需活動前一天取貨，取貨時間：14:00 - 17:30</span>
+                        </div>
+                    </div>
+                </label>
+                <!-- 三重取貨點早上 -->
+                <label class="pickup-option" id="optionSanchongMorning">
+                    <input type="radio" name="pickupLocation" value="三重取貨點（早上）">
+                    <div class="pickup-content">
+                        <img src="https://i.imgur.com/poa11v2.jpeg" alt="三重取貨點（早上）">
+                        <div class="pickup-info">
+                            <span class="store-name">三重取貨點（早上）</span>
+                            <span class="store-address">新北市三重區中正北路212號 (吉美家具行)</span>
+                            <span class="store-time">為當日上午取貨，取貨時間：08:00 - 09:00</span>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <!-- ✅ 取貨時間（50%） -->
+        <div class="main-flex-w3ls-sectns">
+            <div class="form-w3-agile-text1" style="flex: 1 1 48%;">
+                <label for="pickupTime">取貨時間：</label>
+                <input type="time" id="pickupTime" required step="60">
+            </div>
+            <div style="flex: 1 1 48%;"></div> <!-- 空白右半邊 -->
+        </div>
+
+
+
+
+
+
+
+        <!-- 訂購內容 -->
+        <h3 class="sub-heading-agileits">訂購內容 (請包含買十送一，若需租借模具總枝數需達165枝。)</h3>
+        <p>請在各口味中填入包含買十送一之訂購量，贈送口味皆為12元品項</p>
+
+        <div class="flavor-container">
+            <div class="flavor-item">
+                <label>12元口味 - 多多</label>
+                <input type="text" id="qtyDuoDuo" pattern="[0-9]*" inputmode="numeric" tabindex="1">
+            </div>
+            <div class="flavor-item">
+                <label>15元口味 - 蘋果</label>
+                <input type="text" id="qtyApple" pattern="[0-9]*" inputmode="numeric" tabindex="6">
+            </div>
+            <div class="flavor-item">
+                <label>12元口味 - 葡萄</label>
+                <input type="text" id="qtyGrape" pattern="[0-9]*" inputmode="numeric" tabindex="2">
+            </div>
+            <div class="flavor-item">
+                <label>15元口味 - 鳳梨</label>
+                <input type="text" id="qtyPineapple" pattern="[0-9]*" inputmode="numeric" tabindex="7">
+            </div>
+            <div class="flavor-item">
+                <label>12元口味 - 荔枝</label>
+                <input type="text" id="qtyLychee" pattern="[0-9]*" inputmode="numeric" tabindex="3">
+            </div>
+            <div class="flavor-item">
+                <label>15元口味 - 柳橙</label>
+                <input type="text" id="qtyOrange" pattern="[0-9]*" inputmode="numeric" tabindex="8">
+            </div>
+            <div class="flavor-item">
+                <label>12元口味 - 百香果</label>
+                <input type="text" id="qtyPassionFruit" pattern="[0-9]*" inputmode="numeric" tabindex="4">
+            </div>
+            <div class="flavor-item">
+                <label>15元口味 - 水蜜桃</label>
+                <input type="text" id="qtyPeach" pattern="[0-9]*" inputmode="numeric" tabindex="9">
+            </div>
+            <div class="flavor-item">
+                <label>12元口味 - 草莓</label>
+                <input type="text" id="qtyStrawberry" pattern="[0-9]*" inputmode="numeric" tabindex="5">
+            </div>
+            <div class="flavor-item">
+                <label>15元口味 - 芒果</label>
+                <input type="text" id="qtyMango" pattern="[0-9]*" inputmode="numeric" tabindex="10">
+            </div>
+        </div>
+
+        <!-- 計算結果 -->
+        <div id="totalCountText" class="total-summary">
+          <div class="total-row">
+            總枝數: <strong>0</strong> 枝。
+          </div>
+          <div class="total-sub">⤷ 訂購 0 枝 + 贈送 0 枝。</div>
+          <div class="total-sub">⤷ 贈送口味為 12 元口味。</div>
+          <div class="total-row">
+            總金額: <strong>0</strong> 元。
+          </div>
+        </div>
+
+
+        <!-- 送出按鈕 -->
+        <input type="submit" value="送出">
+    </form>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log(document.getElementById("orderUnit")); // 確保找到 input
+    });
+</script>
+
+</div>
